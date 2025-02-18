@@ -8,4 +8,4 @@ Repositório do projeto da trilha fullstack da 19ª NLW da Rocketseat
 
 ## CSS
 
-## js
+## Javascript
