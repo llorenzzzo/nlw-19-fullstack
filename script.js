@@ -4,6 +4,11 @@ const formAction = () => {
   document.getElementById("form");
   form.onSubmit = (event) => {
     event.preventDefault();
+    const formData = new FormData(form)
+    const userData = {
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+    }
   };
 };
 
