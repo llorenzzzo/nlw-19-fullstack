@@ -35,10 +35,8 @@ const getTotalSubscribers = (userData) => {
 
 const showInvite = (userData) => {
   app.innerHTML = `
-    <input type="text" id="link" value="https://evento.com?ref=${
-      userData.ref
+    <input type="text" id="link" value="https://evento.com?ref=${userData.ref
     }" disabled>
-
     <div id="stats">
         <h4>
            ${getTotalSubscribers(userData)}
@@ -54,7 +52,10 @@ const showInvite = (userData) => {
 const saveUser = (userData) => {
   const newUser = {
     ...userData,
+    ref: Math.round(Math.random() * 4000),
+    refBy: 100
   };
+  users.push(newUser)
 };
 
 const formAction = () => {
@@ -72,6 +73,7 @@ const formAction = () => {
     } else {
       const newUser = saveUser(userData);
     }
+    showInvite(newUser)
   };
 };
 

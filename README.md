@@ -30,4 +30,4 @@ Retorna um novo array com os valores que forem verdadeiros
 
 ### spread operator
 
-...objeto -> propriedade1 : valor2, propriedade1 : valor2 ...
+...objeto -> propriedade1 : valor2, propriedade1 : valor2 ... -> todas as propriedades do objeto
