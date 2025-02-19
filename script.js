@@ -1,13 +1,76 @@
 const app = document.getElementById("app");
+const users = [
+  {
+    email: "test@test.com",
+    phone: "99999999999",
+    ref: 100,
+    refBy: null,
+  },
+  {
+    email: "tust@tust.com",
+    phone: "99999999999",
+    ref: 200,
+    refBy: 100,
+  },
+  {
+    email: "tost@tost.com",
+    phone: "99999999999",
+    ref: 300,
+    refBy: 100,
+  },
+];
+
+const getUser = (userData) => {
+  return users.find((user) => {
+    return user.email == userData.email;
+  });
+};
+
+const getTotalSubscribers = (userData) => {
+  const subs = users.filter((user) => {
+    return user.refBy == userData.ref;
+  });
+  return subs.length;
+};
+
+const showInvite = (userData) => {
+  app.innerHTML = `
+    <input type="text" id="link" value="https://evento.com?ref=${
+      userData.ref
+    }" disabled>
+
+    <div id="stats">
+        <h4>
+           ${getTotalSubscribers(userData)}
+        </h4>
+
+        <p>
+            Inscrições feitas!
+        </p>
+    </div>
+    `;
+};
+
+const saveUser = (userData) => {
+  const newUser = {
+    ...userData,
+  };
+};
 
 const formAction = () => {
   document.getElementById("form");
-  form.onSubmit = (event) => {
+  form.onsubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData(form)
+    const formData = new FormData(form);
     const userData = {
       email: formData.get("email"),
       phone: formData.get("phone"),
+    };
+    const user = getUser(userData);
+    if (user) {
+      showInvite(user);
+    } else {
+      const newUser = saveUser(userData);
     }
   };
 };
@@ -17,9 +80,13 @@ const startApp = () => {
     <form id="form">
     <input type="email" name="email" placeholder="E-mail" />
     <input type="text" name="phone" placeholder="Telefone" />
-    <button type="submit">Confirmar</button>
-    </form>;
+    <button>Confirmar</button>
+    </form>
     `;
+
   app.innerHTML = content;
+
+  formAction();
 };
+
 startApp();
