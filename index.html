@@ -13,7 +13,6 @@
     <title>NLW - Fullstack</title>
   </head>
   <body>
-    <main>
     <div id="container">
       <header>
         <img src="./assets/logo.svg" alt="logo" height="30" />
@@ -22,64 +21,8 @@
           Summit 2025
         </h1>
       </header>
-
-      <div id="app">
-        <section id="about">
-          <div id="title">
-            <h3>Sobre o evento</h3>
-            <div id="live">
-              <span>
-                <img src="" alt="radio" width="32" />
-              </span>
-              Ao vivo
-            </div>
-          </div>
-          <p>
-            Um evento feito por e para pessoas desenvolvedoras apaixonadas por
-            criar soluções inovadoras e compartilhar conhecimento. Vamos
-            mergulhar nas tendências mais recentes em desenvolvimento de
-            software, arquitetura de sistemas e tecnologias emergentes, com
-            palestras, workshops e hackathons.
-          </p>
-          <p>Dias 15 a 17 de março | Das 18h às 21h | Online & Gratuito</p>
-        </section>
-        <section id="subscription">
-          <h3>Inscrição</h3>
-          <form id="form">
-            <div id="fields">
-              <input type="email" name="email" placeholder="E-mail" />
-              <input type="text" name="phone" placeholder="Telefone" />
-              <button>Confirmar</button>
-            </div>
-          </form>
-        </section>
-      </div>
+      <div id="app"></div>
     </div>
-    <section id="mgm">
-      <div id="text">
-        <h3>Inscrição confirmada!</h3>
-        <p>
-          Convide mais pessoas e concorra a prêmios!<br />
-          Compartilhe o link e acompanhe as inscrições:
-        </p>
-      </div>
-      <div id="link">
-        <input
-          type="text"
-          id="link"
-          value="https://evento.com?ref=${
-      userData.ref
-    }"
-          disabled
-        />
-        <div id="stats">
-          <h2>${getTotalSubscribers(userData)}</h2>
-
-          <p>Inscrições feitas!</p>
-        </div>
-      </div>
-    </section>
     <script src="/script.js"></script>
-  </main>
   </body>
 </html>
